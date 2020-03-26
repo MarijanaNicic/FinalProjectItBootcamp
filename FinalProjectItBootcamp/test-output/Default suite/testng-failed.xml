@@ -5,6 +5,8 @@
     <classes>
       <class name="Tests.PetStoreMenuPageTest">
         <methods>
+          <include name="singInButton"/>
+          <include name="PetStoreMenuTest"/>
           <include name="setup"/>
           <include name="afterClass"/>
           <include name="goToCorrectURL"/>
