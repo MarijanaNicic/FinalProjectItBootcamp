@@ -19,21 +19,22 @@ public class PetStoreMenuPage {
 	private WebDriver driver;
 	private Properties locators;
 	private WebDriverWait waiter;
-//	private List<WebElement> leftNavigationBar;
-//	private List<WebElement> mainImage;
-//	private List<WebElement> quickLinks;
-//	private List<WebElement> MenuContent;
+
 
 	public PetStoreMenuPage(WebDriver driver, Properties locators, WebDriverWait waiter) {
 		this.driver = driver;
 		this.locators = locators;
 		this.waiter = waiter;
 	}
-	
-	
+
+	public List<WebElement> getAllLinks() {
+		return this.driver.findElements(By.tagName("a"));
+	}
+
 	public WebElement getFishImgLink(WebDriver driver) {
 		return this.driver.findElement(By.xpath(this.locators.getProperty("fish_img_link")));
-}
+	}
+
 	public void clickFishImgLink(WebDriver driver) {
 		this.getFishImgLink(driver).click();
 	}
@@ -69,6 +70,7 @@ public class PetStoreMenuPage {
 	public void clickBirdsImgLink(WebDriver driver) {
 		this.getBirdsImgLink(driver).click();
 	}
+
 	public WebElement getBirdsBigImgLink(WebDriver driver) {
 		return this.driver.findElement(By.xpath(this.locators.getProperty("birds_bigimg_link")));
 	}
@@ -82,8 +84,8 @@ public class PetStoreMenuPage {
 	}
 
 	public void clickFishOnTop(WebDriver driver) {
-	this.getFishOnTop(driver).click();
-}
+		this.getFishOnTop(driver).click();
+	}
 
 	public WebElement getDogsOnTop(WebDriver driver) {
 		return this.driver.findElement(By.xpath(this.locators.getProperty("dogs_onTop")));
@@ -95,7 +97,7 @@ public class PetStoreMenuPage {
 
 	public WebElement getCatsOnTop(WebDriver driver) {
 		return this.driver.findElement(By.xpath(this.locators.getProperty("cats_onTop")));
-}
+	}
 
 	public void clickCatsOnTop(WebDriver driver) {
 		this.getCatsOnTop(driver).click();
@@ -122,7 +124,7 @@ public class PetStoreMenuPage {
 	}
 
 	public void clickFishLink(WebDriver driver) {
-	this.getFishLink(driver).click();
+		this.getFishLink(driver).click();
 	}
 
 	public WebElement getDogsLink(WebDriver driver) {
@@ -148,7 +150,7 @@ public class PetStoreMenuPage {
 	public void clickReptilesLink(WebDriver driver) {
 		this.getReptilesLink(driver).click();
 	}
-	
+
 	public WebElement getBirdsLink(WebDriver driver) {
 		return this.driver.findElement(By.xpath(this.locators.getProperty("birds_link")));
 	}
@@ -164,7 +166,7 @@ public class PetStoreMenuPage {
 	public void clickCartLink(WebDriver driver) {
 		this.getCartLink(driver).click();
 	}
-	
+
 	public WebElement getSingInLink(WebDriver driver) {
 		return this.driver.findElement(By.xpath(this.locators.getProperty("singIn_link")));
 	}
@@ -179,7 +181,5 @@ public class PetStoreMenuPage {
 
 	public void clickHelpLink(WebDriver driver) {
 		this.getHelpLink(driver).click();
-	}	}
-
-
-
+	}
+}
