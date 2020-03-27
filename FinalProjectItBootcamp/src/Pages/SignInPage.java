@@ -22,20 +22,20 @@ public class SignInPage {
 	public static WebElement getUserName(WebDriver driver) {
 		return driver.findElement(By.xpath(locators.getProperty("username")));
 	}
-	public static void inputUserName(WebDriver driver, String data) {
+	public static void inputUserName(WebDriver driver, String userId) {
 		getUserName(driver).click();
 		getUserName(driver).clear();
-		getUserName(driver).sendKeys(data);
+		getUserName(driver).sendKeys(userId);
 	}
 	
 	//password
-	public WebElement getPassword(WebDriver driver) {
-		return this.driver.findElement(By.xpath(this.locators.getProperty("password")));
+	public static WebElement getPassword(WebDriver driver) {
+		return driver.findElement(By.xpath(locators.getProperty("password")));
 	}
-	public void inputPassword(WebDriver driver, String data) {
-		this.getPassword(driver).click();
-		this.getPassword(driver).clear();
-		this.getPassword(driver).sendKeys(data);
+	public static void inputPassword(WebDriver driver, String data) {
+		getPassword(driver).click();
+		getPassword(driver).clear();
+		getPassword(driver).sendKeys(data);
 	}
 	
 	//log in button

@@ -38,14 +38,13 @@ public class RegistrationPageTest {
 
 	@Test
 	public void RegistrationTesting() {
-
+		
 		driver.navigate().to(this.locators.getProperty("registration_url"));
 
 		RegistrationPage newUser = new RegistrationPage(driver, locators, waiter);
 		SoftAssert sa = new SoftAssert();
 		ExcelUtils.setExcell("data/pet-store-data.xlsx");
 		ExcelUtils.setWorkSheet(1);
-
 		for (int i = 1; i < ExcelUtils.getRowNumber() - 1; i++) {
 			driver.navigate().to(this.locators.getProperty("registration_url"));
 			ExcelUtils.setRandomAt(i, 0);
@@ -70,12 +69,15 @@ public class RegistrationPageTest {
 			RegistrationPage.getSaveAccauntInformation().click();
 		}
 		ExcelUtils.closeExcell();
-
+		
 		sa.assertTrue(RegistrationPage.getLogoImg().isDisplayed());
 	}
+		
+	
 
 	@AfterClass
 	public void afterClass() {
 		this.driver.close();
 	}
 }
+
