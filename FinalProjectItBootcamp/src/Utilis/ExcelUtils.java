@@ -5,6 +5,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -66,15 +70,14 @@ public class ExcelUtils {
 		}
 		return "";
 	}
-	
-	
+
 	public static String getDataAtNum(int row, int column) {
 		try {
 			XSSFRow r = sheet.getRow(row);
 			XSSFCell celija = r.getCell(column);
 			double br = celija.getNumericCellValue();
-			String rez= "";
-			rez = rez + (int)br;
+			String rez = "";
+			rez = rez + (int) br;
 			return rez;
 		} catch (NullPointerException e) {
 			System.out.println(e.toString());
@@ -85,7 +88,6 @@ public class ExcelUtils {
 		}
 		return "";
 	}
-
 
 	public static boolean setDataAt(int row, int column, String data) {
 		try {
@@ -107,12 +109,83 @@ public class ExcelUtils {
 			return false;
 		}
 	}
+
+	public static boolean setRandomAt(int row, int column) {
+		String idOne = UUID.randomUUID().toString();
+		String data = idOne.substring(0, 5);
+		try {
+			XSSFRow r = sheet.getRow(row);
+			if (r == null) {
+				r = sheet.createRow(row);
+			}
+			XSSFCell celija = r.getCell(column);
+			if (celija == null) {
+				celija = r.createCell(column);
+			}
+			celija.setCellValue(data);
+			FileOutputStream fos = new FileOutputStream(excellPath);
+			wb.write(fos);
+			return true;
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			System.out.println("Doslo je do greske!");
+			return false;
+		}
+	}
 	
+	public static boolean setLangRandomAt(int row, int column) {
+		List<String> myList = Arrays.asList("english", "japanese");
+		Random rand = new Random();
+	    int randomitem = rand.nextInt(myList.size());
+	    String data = myList.get(randomitem);
+		try {
+			XSSFRow r = sheet.getRow(row);
+			if (r == null) {
+				r = sheet.createRow(row);
+			}
+			XSSFCell celija = r.getCell(column);
+			if (celija == null) {
+				celija = r.createCell(column);
+			}
+			celija.setCellValue(data);
+			FileOutputStream fos = new FileOutputStream(excellPath);
+			wb.write(fos);
+			return true;
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			System.out.println("Doslo je do greske!");
+			return false;
+		}
+	}
 	
+	public static boolean setFavCategRandomAt(int row, int column) {
+		List<String> myList = Arrays.asList("FISH", "DOGS", "REPTILES", "CATS", "BIRDS");
+		Random rand = new Random();
+	    int randomitem = rand.nextInt(myList.size());
+	    String data = myList.get(randomitem);
+		try {
+			XSSFRow r = sheet.getRow(row);
+			if (r == null) {
+				r = sheet.createRow(row);
+			}
+			XSSFCell celija = r.getCell(column);
+			if (celija == null) {
+				celija = r.createCell(column);
+			}
+			celija.setCellValue(data);
+			FileOutputStream fos = new FileOutputStream(excellPath);
+			wb.write(fos);
+			return true;
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			System.out.println("Doslo je do greske!");
+			return false;
+		}
+	}
 
 	public static int getRowNumber() {
 		try {
-			
+
 			return sheet.getLastRowNum() + 1;
 		} catch (Exception e) {
 			System.out.println(e.toString());

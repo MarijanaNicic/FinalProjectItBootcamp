@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class PetStoreMenuPage {
 
 	private WebDriver driver;
-	private Properties locators;
+	private static Properties locators;
 	private WebDriverWait waiter;
 
 
@@ -167,12 +167,12 @@ public class PetStoreMenuPage {
 		this.getCartLink(driver).click();
 	}
 
-	public WebElement getSingInLink(WebDriver driver) {
-		return this.driver.findElement(By.xpath(this.locators.getProperty("singIn_link")));
+	public static WebElement getSingInLink(WebDriver driver) {
+		return driver.findElement(By.xpath(locators.getProperty("singIn_link")));
 	}
 
-	public void clickSingInLink(WebDriver driver) {
-		this.getSingInLink(driver).click();
+	public static void clickSingInLink(WebDriver driver) {
+		getSingInLink(driver).click();
 	}
 
 	public WebElement getHelpLink(WebDriver driver) {
