@@ -3,67 +3,94 @@ package Pages;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import Utilis.ExcelUtils;
+
 public class SignInPage {
 	private WebDriver driver;
-	private static Properties locators;
+	private Properties locators;
 	private WebDriverWait waiter;
-
+	
 	public SignInPage(WebDriver driver, Properties locators, WebDriverWait waiter) {
 		this.driver = driver;
 		this.locators = locators;
 		this.waiter = waiter;
+		
+		//User name
+	} 
+	
+	public WebElement getUserName() {
+		return this.driver.findElement(By.xpath(locators.getProperty("username")));
 	}
 	
-	//username
-	public static WebElement getUserName(WebDriver driver) {
-		return driver.findElement(By.xpath(locators.getProperty("username")));
-	}
-	public static void inputUserName(WebDriver driver, String userId) {
-		getUserName(driver).click();
-		getUserName(driver).clear();
-		getUserName(driver).sendKeys(userId);
+	public void setUserName(String username) {
+		WebElement user = this.getUserName();
+		user.clear();
+		user.sendKeys(username);
 	}
 	
-	//password
-	public static WebElement getPassword(WebDriver driver) {
-		return driver.findElement(By.xpath(locators.getProperty("password")));
-	}
-	public static void inputPassword(WebDriver driver, String data) {
-		getPassword(driver).click();
-		getPassword(driver).clear();
-		getPassword(driver).sendKeys(data);
+	//Password
+	public WebElement getPassword() {
+		return this.driver.findElement(By.xpath(locators.getProperty("password")));
 	}
 	
-	//log in button
+	public void setPassword(String password) {
+		WebElement Password = this.getPassword();
+		Password.clear();
+		Password.sendKeys(password);
+	}
 	
-	public static WebElement getLoginButton(WebDriver driver) {
-		return driver.
-				findElement(By.xpath(locators.getProperty("login")));
-	}
-	public static void clickLoginButton(WebDriver driver) {
-		getLoginButton(driver).click();
-	}
-	//Registration link
+	//Log in Button
 	
-	public static WebElement getRegistrationLink(WebDriver driver) {
-		return driver.
-				findElement(By.xpath(locators.getProperty("registerButton")));
+	public WebElement getLoginButton() {
+		return this.driver.findElement(By.xpath(locators.getProperty("logIn")));
 	}
-	public static void clickRegistrationLink (WebDriver driver) {
-		getRegistrationLink(driver).click();
-	}
-	//Sign out
 	
-	public static WebElement getSignOut (WebDriver driver) {
-		return driver.
-				findElement(By.xpath(locators.getProperty("signOut")));
+	public void clickLoginButton() {
+		this.getLoginButton().click();
 	}
-	public static void clickSignOut(WebDriver driver) {
-		getSignOut(driver).click();
+	
+	//register
+	public WebElement getRegisterButton() {
+		return this.driver.findElement(By.xpath(locators.getProperty("registerButton")));
 	}
+	
+	public void clickRegisterButton() {
+		this.getRegisterButton().click();
+	}
+	//Sign in
+	
+	public void signIn(String username, String password) {
+		this.setUserName(username);
+		this.setPassword(password);
+		this.clickLoginButton();
+	}
+	
+	public WebElement getSignOut() {
+		return this.driver.findElement(By.xpath(locators.getProperty("signOut")));
+	}
+	
+	// true or false sign in
+	
+	public boolean signedIn() {
+		try {
+			this.getSignOut();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	// sign out
+	
+	public void signOut() {
+		this.getSignOut().click();
+	}
+	
+
 
 }

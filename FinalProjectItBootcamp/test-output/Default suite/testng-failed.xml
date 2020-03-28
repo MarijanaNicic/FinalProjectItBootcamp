@@ -7,7 +7,6 @@
         <methods>
           <include name="setup"/>
           <include name="afterClass"/>
-          <include name="signInTestAllUserExcel"/>
           <include name="signInTestOneUserExcel"/>
         </methods>
       </class> <!-- Tests.SignInPageTest -->

@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,6 +17,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import Pages.PetStoreMenuPage;
 import Pages.SignInPage;
 import Utilis.ExcelUtils;
 
@@ -37,79 +39,32 @@ public class SignInPageTest {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
-	
-		@Test
-		public void signInTestOneUserExcel()throws InterruptedException  {
-			
+//
+	@Test
+	public void signInTestOneUserExcel() throws InterruptedException {
+		ExcelUtils.setExcell("data/pet-store-data.xlsx");
+		ExcelUtils.setWorkSheet(1);
+		SoftAssert sa = new SoftAssert();
+
+		SignInPage signIn = new SignInPage(driver, locators, waiter);
+
+		for (int i = 1; i < ExcelUtils.getRowNumber(); i++) {
 			driver.navigate().to(this.locators.getProperty("signIn_url"));
+			String username = ExcelUtils.getDataAt(i, 0);
+			String password = ExcelUtils.getDataAt(i, 1);
 
-			ExcelUtils.setExcell("data/pet-store-data.xlsx");
-			ExcelUtils.setWorkSheet(1);
-			String username = ExcelUtils.getDataAt(1, 0);
-			String password = ExcelUtils.getDataAt(1, 1);
-			SoftAssert sa = new SoftAssert();
-			SignInPage.inputUserName(driver, username);
-			tempWE = SignInPage.getUserName(driver);
-			sa.assertEquals(tempWE.getAttribute("value"), username);
-
-			SignInPage.inputPassword(driver, password);
-			tempWE = SignInPage.getPassword(driver);
-			sa.assertEquals(tempWE.getAttribute("value"), password);
-
-			SignInPage.clickLoginButton(driver);
-			String currUrl = driver.getCurrentUrl();
-			currUrl = driver.getCurrentUrl();
-			currUrl = currUrl.replaceAll(";jsessionid=[^?]*", "");
-			sa.assertEquals(currUrl, "https://petstore.octoperf.com/actions/Catalog.action");
-
-			sa.assertAll();
+			signIn.signIn(username, password);
+			sa.assertTrue(signIn.signedIn());
+			signIn.signOut();
 		}
+		sa.assertAll();
+	}
 
-		@Test
-		public void signInTestAllUserExcel() throws InterruptedException {
-			SoftAssert sa = new SoftAssert();
-			ExcelUtils.setExcell("data/pet-store-data.xlsx");
-			ExcelUtils.setWorkSheet(1);
-
-			for (int i = 1; i < ExcelUtils.getRowNumber(); i++) {
-				driver.getCurrentUrl();
-
-				String username = ExcelUtils.getDataAt(i, 0);
-				String password = ExcelUtils.getDataAt(i, 1);
-				
-				
-				
-				SignInPage.inputUserName(driver, username);
-				tempWE = SignInPage.getUserName(driver);
-				sa.assertEquals(tempWE.getAttribute("value"), username);
-
-				SignInPage.inputPassword(driver, password);
-				tempWE = SignInPage.getPassword(driver);
-				sa.assertEquals(tempWE.getAttribute("value"), password);
-
-				SignInPage.clickLoginButton(driver);
-				String currUrl = driver.getCurrentUrl();
-				currUrl = currUrl.replaceAll(";jsessionid=[^?]*", "");
-				sa.assertEquals(currUrl, "https://petstore.octoperf.com/actions/Catalog.action");
-
-				SignInPage.clickSignOut(driver);
-				currUrl = driver.getCurrentUrl();
-				currUrl = currUrl.replaceAll(";jsessionid=[^?]*", "");
-				sa.assertEquals(currUrl, "https://petstore.octoperf.com/actions/Catalog.action");
-
-				sa.assertAll();
-			}
-		
-	
-		
-	
-	
-}
 	@AfterClass
 	public void afterClass() {
-		
+
 		ExcelUtils.closeExcell();
 		driver.close();
 
-	}	
+	}
 }
