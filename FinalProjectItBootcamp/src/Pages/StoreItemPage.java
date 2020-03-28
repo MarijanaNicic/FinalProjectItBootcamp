@@ -25,7 +25,7 @@ public class StoreItemPage {
 		return this.driver.findElement(By.xpath(locators.getProperty("addToCart")));
 	}
 
-	public void addToCart() {
+	public void clickAddToCart() {
 		this.getAddToCart().click();
 	}
 
