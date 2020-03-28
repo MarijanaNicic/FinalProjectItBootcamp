@@ -33,7 +33,7 @@ public class HomePageTest {
 	}
 
 	@Test
-	public void HomePTest() throws InterruptedException {
+	public void HomePagTest() throws InterruptedException {
 		driver.navigate().to(this.locators.getProperty("petStore_link"));
 
 		HomePage hp = new HomePage(driver, locators, waiter);
