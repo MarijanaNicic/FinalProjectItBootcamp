@@ -21,7 +21,7 @@ import Pages.StoreItemPage;
 import Utilis.ExcelUtils;
 
 public class CartTest {
-	
+
 	private WebDriver driver;
 	private Properties locators;
 	private WebDriverWait waiter;
@@ -42,14 +42,14 @@ public class CartTest {
 
 	@Test
 	public void CartTestin() throws InterruptedException {
-		
+
 		for (int i = 1; i < ExcelUtils.getRowNumber(); i++) {
 			driver.navigate().to(ExcelUtils.getDataAt(i, 1));
 			StoreItemPage addItem = new StoreItemPage(driver, locators, waiter);
 			addItem.clickAddToCart();
-			
+
 		}
-		
+
 		CartPage isAdded = new CartPage(driver, locators, waiter);
 		SoftAssert sa = new SoftAssert();
 		sa.assertTrue(isAdded.isAdded());
@@ -57,27 +57,25 @@ public class CartTest {
 		driver.navigate().refresh();
 		ExcelUtils.closeExcell();
 	}
-	
-	
+
 	@Test
-//	public void CartEmptyTestin() throws InterruptedException {
-//		
-//		for (int i = 1; i < ExcelUtils.getRowNumber(); i++) {
-//			driver.navigate().to(ExcelUtils.getDataAt(i, 1));
-//			StoreItemPage addItem1 = new StoreItemPage(driver, locators, waiter);
-//			addItem1.clickAddToCart();
-//			
-//		}
-//		
-//		driver.manage().deleteAllCookies();
-//		driver.navigate().refresh();
-//		SoftAssert sa = new SoftAssert();
-//		CartPage isEmpty = new CartPage(driver, locators, waiter);
-//		sa.assertTrue(isEmpty.isEmpty());
-//		ExcelUtils.closeExcell();
-//		
+	public void CartEmptyTestin() throws InterruptedException {
+		CartPage isEmpty = new CartPage(driver, locators, waiter);
+		for (int i = 1; i < ExcelUtils.getRowNumber(); i++) {
+			driver.navigate().to(ExcelUtils.getDataAt(i, 1));
+			StoreItemPage addItem1 = new StoreItemPage(driver, locators, waiter);
+			addItem1.clickAddToCart();
+
+		}
+
+		driver.manage().deleteAllCookies();
+		driver.navigate().refresh();
+		SoftAssert sa = new SoftAssert();
+		sa.assertTrue(isEmpty.cartIsEmpty());
+		ExcelUtils.closeExcell();
+
 	}
-		
+
 	@AfterClass
 	public void afterClass() {
 		this.driver.close();
