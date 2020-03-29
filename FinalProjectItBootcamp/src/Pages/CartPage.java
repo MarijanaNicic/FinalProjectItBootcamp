@@ -63,10 +63,14 @@ public class CartPage {
 		return true;
 
 	}
-	public boolean isEmpty() {
-		
-		WebElement empty = driver.findElement(By.xpath(locators.getProperty("cartIsEmpty")));
-		return true;
-	
-	
-}}
+
+	public boolean cartIsEmpty() {
+		try {
+			this.driver.findElement(By.xpath(locators.getProperty("cartIsEmpty")));
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+}
