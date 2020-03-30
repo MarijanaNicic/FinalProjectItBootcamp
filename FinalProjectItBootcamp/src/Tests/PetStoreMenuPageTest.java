@@ -233,6 +233,7 @@ public class PetStoreMenuPageTest {
 	@Test
 	public void singInButton() throws InterruptedException {
 		PetStoreMenuPage singInButton = new PetStoreMenuPage(driver, locators, waiter);
+		driver.navigate().to(this.locators.getProperty("catalog_url"));
 		singInButton.clickSingInLink(driver);
 		Assert.assertTrue(singInButton.isInSignInPage());
 	}

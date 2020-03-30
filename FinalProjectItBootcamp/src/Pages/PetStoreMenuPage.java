@@ -169,7 +169,7 @@ public class PetStoreMenuPage {
 	}
 
 	public WebElement getSingInLink(WebDriver driver) {
-		return driver.findElement(By.xpath(this.locators.getProperty("singIn_link")));
+		return driver.findElement(By.xpath(this.locators.getProperty("singIn")));
 	}
 
 	public void clickSingInLink(WebDriver driver) {
@@ -184,7 +184,12 @@ public class PetStoreMenuPage {
 		this.getHelpLink(driver).click();
 	}
 	public boolean isInSignInPage() {
-		this.clickSingInLink(driver);
-		return waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locators.getProperty("logInButton")))).isDisplayed();
+		try {
+			this.driver.findElement(By.xpath(locators.getProperty("logIn")));
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
+	
 }
