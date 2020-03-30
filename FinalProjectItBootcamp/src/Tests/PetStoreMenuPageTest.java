@@ -232,13 +232,11 @@ public class PetStoreMenuPageTest {
 
 	@Test
 	public void singInButton() throws InterruptedException {
-		driver.navigate().to(this.locators.getProperty("catalog_url"));
-		SoftAssert sa = new SoftAssert();
 		PetStoreMenuPage singInButton = new PetStoreMenuPage(driver, locators, waiter);
 		singInButton.clickSingInLink(driver);
-		boolean singInLink = driver.findElement(By.xpath(locators.getProperty("enterYourUsername"))).isDisplayed();
-		Assert.assertTrue(singInLink);
+		Assert.assertTrue(singInButton.isInSignInPage());
 	}
+	
 
 	@AfterClass
 	public void afterClass() {

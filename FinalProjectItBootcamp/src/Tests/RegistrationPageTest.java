@@ -45,7 +45,7 @@ public class RegistrationPageTest {
 		SoftAssert sa = new SoftAssert();
 		ExcelUtils.setExcell("data/pet-store-data.xlsx");
 		ExcelUtils.setWorkSheet(1);
-		for (int i = 1; i < ExcelUtils.getRowNumber() - 1; i++) {
+		for (int i = 1; i < ExcelUtils.getRowNumber(); i++) {
 			driver.navigate().to(this.locators.getProperty("registration_url"));
 			ExcelUtils.setRandomAt(i, 0);
 			RegistrationPage.setUserID(ExcelUtils.getDataAt(i, 0));

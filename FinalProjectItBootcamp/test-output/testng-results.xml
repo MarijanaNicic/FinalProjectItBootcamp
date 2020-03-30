@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="47669" started-at="2020-03-29T08:41:17Z" finished-at="2020-03-29T08:42:04Z">
+  <suite name="Default suite" duration-ms="79405" started-at="2020-03-30T14:19:00Z" finished-at="2020-03-30T14:20:20Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="47669" started-at="2020-03-29T08:41:17Z" finished-at="2020-03-29T08:42:04Z">
-      <class name="Tests.CartTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.CartTest@5b275dab]" name="setup" is-config="true" duration-ms="7321" started-at="2020-03-29T08:41:17Z" finished-at="2020-03-29T08:41:24Z">
+    <test name="Default test" duration-ms="79405" started-at="2020-03-30T14:19:00Z" finished-at="2020-03-30T14:20:20Z">
+      <class name="Tests.SignInPageTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Tests.SignInPageTest@5b275dab]" name="setup" is-config="true" duration-ms="7248" started-at="2020-03-30T14:19:00Z" finished-at="2020-03-30T14:19:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="CartEmptyTestin()[pri:0, instance:Tests.CartTest@5b275dab]" name="CartEmptyTestin" duration-ms="35464" started-at="2020-03-29T08:41:24Z" finished-at="2020-03-29T08:41:59Z">
+        <test-method status="PASS" signature="signInTestOneUserExcel()[pri:0, instance:Tests.SignInPageTest@5b275dab]" name="signInTestOneUserExcel" duration-ms="69834" started-at="2020-03-30T14:19:08Z" finished-at="2020-03-30T14:20:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CartEmptyTestin -->
-        <test-method status="PASS" signature="CartTestin()[pri:0, instance:Tests.CartTest@5b275dab]" name="CartTestin" duration-ms="4490" started-at="2020-03-29T08:41:59Z" finished-at="2020-03-29T08:42:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CartTestin -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:Tests.CartTest@5b275dab]" name="afterClass" is-config="true" duration-ms="318" started-at="2020-03-29T08:42:04Z" finished-at="2020-03-29T08:42:04Z">
+        </test-method> <!-- signInTestOneUserExcel -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:Tests.SignInPageTest@5b275dab]" name="afterClass" is-config="true" duration-ms="2208" started-at="2020-03-30T14:20:18Z" finished-at="2020-03-30T14:20:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- Tests.CartTest -->
+      </class> <!-- Tests.SignInPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

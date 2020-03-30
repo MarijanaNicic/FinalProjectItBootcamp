@@ -53,6 +53,7 @@ public class CartTest {
 		CartPage isAdded = new CartPage(driver, locators, waiter);
 		SoftAssert sa = new SoftAssert();
 		sa.assertTrue(isAdded.isAdded());
+		driver.navigate().to(this.locators.getProperty("cart_url"));
 		driver.manage().deleteAllCookies();
 		driver.navigate().refresh();
 		ExcelUtils.closeExcell();
@@ -68,6 +69,7 @@ public class CartTest {
 
 		}
 
+		driver.navigate().to(this.locators.getProperty("cart_url"));
 		driver.manage().deleteAllCookies();
 		driver.navigate().refresh();
 		SoftAssert sa = new SoftAssert();

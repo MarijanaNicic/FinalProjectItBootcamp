@@ -12,12 +12,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PetStoreMenuPage {
 
 	private WebDriver driver;
-	private static Properties locators;
+	private Properties locators;
 	private WebDriverWait waiter;
 
 
@@ -167,19 +168,23 @@ public class PetStoreMenuPage {
 		this.getCartLink(driver).click();
 	}
 
-	public static WebElement getSingInLink(WebDriver driver) {
-		return driver.findElement(By.xpath(locators.getProperty("singIn_link")));
+	public WebElement getSingInLink(WebDriver driver) {
+		return driver.findElement(By.xpath(this.locators.getProperty("singIn_link")));
 	}
 
-	public static void clickSingInLink(WebDriver driver) {
+	public void clickSingInLink(WebDriver driver) {
 		getSingInLink(driver).click();
 	}
 
 	public WebElement getHelpLink(WebDriver driver) {
-		return this.driver.findElement(By.xpath(this.locators.getProperty("help_link")));
+		return this.driver.findElement(By.xpath(locators.getProperty("help_link")));
 	}
 
 	public void clickHelpLink(WebDriver driver) {
 		this.getHelpLink(driver).click();
+	}
+	public boolean isInSignInPage() {
+		this.clickSingInLink(driver);
+		return waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locators.getProperty("logInButton")))).isDisplayed();
 	}
 }

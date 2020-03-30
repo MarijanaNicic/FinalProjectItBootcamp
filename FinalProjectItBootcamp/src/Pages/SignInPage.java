@@ -76,14 +76,15 @@ public class SignInPage {
 	
 	// true or false sign in
 	
-	public boolean signedIn() {
-		try {
-			this.getSignOut();
-			return true;
-		} catch (Exception e) {
-			return false;
+	
+		public boolean signedIn() {
+			try {
+				this.driver.findElement(By.xpath(locators.getProperty("signOut")));
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
 		}
-	}
 	
 	// sign out
 	
