@@ -41,7 +41,6 @@ public class RegistrationPageTest {
 		
 		driver.navigate().to(this.locators.getProperty("registration_url"));
 
-		//RegistrationPage newUser = new RegistrationPage(driver, locators, waiter);
 		SoftAssert sa = new SoftAssert();
 		ExcelUtils.setExcell("data/pet-store-data.xlsx");
 		ExcelUtils.setWorkSheet(1);

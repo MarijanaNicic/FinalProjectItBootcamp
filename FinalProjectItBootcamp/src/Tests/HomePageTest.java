@@ -34,7 +34,7 @@ public class HomePageTest {
 
 	@Test
 	public void HomePagTest() throws InterruptedException {
-		driver.navigate().to(this.locators.getProperty("petStore_link"));
+		driver.navigate().to(this.locators.getProperty("pet_store_link"));
 
 		HomePage hp = new HomePage(driver, locators, waiter);
 		hp.clickEnterTheStoreBtn();

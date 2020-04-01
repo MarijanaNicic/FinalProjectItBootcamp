@@ -19,7 +19,7 @@ public class HomePage {
 	}
 
 	public WebElement getEnterTheStoreBtn() {
-		return this.driver.findElement(By.xpath(this.locators.getProperty("EnterTheStore")));
+		return this.driver.findElement(By.xpath(this.locators.getProperty("enter_the_store")));
 	}
 
 	public void clickEnterTheStoreBtn() {
@@ -27,7 +27,7 @@ public class HomePage {
 	}
 
 	public WebElement getlogoIsDisplay() {
-		return this.driver.findElement(By.xpath(this.locators.getProperty("logoIsDisplay")));
+		return this.driver.findElement(By.xpath(this.locators.getProperty("logo_is_display")));
 	}
 
 	public boolean isSuccessEnterTheStore() {
