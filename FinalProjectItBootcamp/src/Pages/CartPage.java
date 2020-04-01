@@ -23,7 +23,7 @@ public class CartPage {
 
 	// remove
 	public WebElement getRemoveFromCart() {
-		return this.driver.findElement(By.xpath(locators.getProperty("removeFromCart")));
+		return this.driver.findElement(By.xpath(locators.getProperty("remove_from_cart")));
 	}
 
 	public void clickRemoveFromCart() {
@@ -32,7 +32,7 @@ public class CartPage {
 
 	// update cart
 	public WebElement getUpdateCart() {
-		return this.driver.findElement(By.xpath(locators.getProperty("updateCart")));
+		return this.driver.findElement(By.xpath(locators.getProperty("update_cart")));
 	}
 
 	public void clickUpdateCart() {
@@ -41,7 +41,7 @@ public class CartPage {
 
 	// Proceed to Checkout
 	public WebElement getProceedToCheckout() {
-		return this.driver.findElement(By.xpath(locators.getProperty("ProceedToCheckout")));
+		return this.driver.findElement(By.xpath(locators.getProperty("proceed_to_checkout")));
 	}
 
 	public void clickProceedToCheckout() {
@@ -66,7 +66,7 @@ public class CartPage {
 
 	public boolean cartIsEmpty() {
 		try {
-			this.driver.findElement(By.xpath(locators.getProperty("cartIsEmpty")));
+			this.driver.findElement(By.xpath(locators.getProperty("cart_is_empty")));
 			return true;
 		} catch (Exception e) {
 			return false;
