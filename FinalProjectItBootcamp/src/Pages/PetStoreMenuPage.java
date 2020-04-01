@@ -31,6 +31,7 @@ public class PetStoreMenuPage {
 	public List<WebElement> getAllLinks() {
 		return this.driver.findElements(By.tagName("a"));
 	}
+	//Img links
 
 	public WebElement getFishImgLink(WebDriver driver) {
 		return this.driver.findElement(By.xpath(this.locators.getProperty("fish_img_link")));
@@ -79,9 +80,11 @@ public class PetStoreMenuPage {
 	public void clickBirdsBigImgLink(WebDriver driver) {
 		this.getBirdsBigImgLink(driver).click();
 	}
+	
+	//links on top
 
 	public WebElement getFishOnTop(WebDriver driver) {
-		return this.driver.findElement(By.xpath(this.locators.getProperty("fish_onTop")));
+		return this.driver.findElement(By.xpath(this.locators.getProperty("fish_on_top")));
 	}
 
 	public void clickFishOnTop(WebDriver driver) {
@@ -89,7 +92,7 @@ public class PetStoreMenuPage {
 	}
 
 	public WebElement getDogsOnTop(WebDriver driver) {
-		return this.driver.findElement(By.xpath(this.locators.getProperty("dogs_onTop")));
+		return this.driver.findElement(By.xpath(this.locators.getProperty("dogs_on_top")));
 	}
 
 	public void clickDogsOnTop(WebDriver driver) {
@@ -97,7 +100,7 @@ public class PetStoreMenuPage {
 	}
 
 	public WebElement getCatsOnTop(WebDriver driver) {
-		return this.driver.findElement(By.xpath(this.locators.getProperty("cats_onTop")));
+		return this.driver.findElement(By.xpath(this.locators.getProperty("cats_on_top")));
 	}
 
 	public void clickCatsOnTop(WebDriver driver) {
@@ -105,7 +108,7 @@ public class PetStoreMenuPage {
 	}
 
 	public WebElement getReptilesOnTop(WebDriver driver) {
-		return this.driver.findElement(By.xpath(this.locators.getProperty("reptiles_onTop")));
+		return this.driver.findElement(By.xpath(this.locators.getProperty("reptiles_on_top")));
 	}
 
 	public void clickReptilesOnTop(WebDriver driver) {
@@ -113,12 +116,14 @@ public class PetStoreMenuPage {
 	}
 
 	public WebElement getBirdsOnTop(WebDriver driver) {
-		return this.driver.findElement(By.xpath(this.locators.getProperty("birds_onTop")));
+		return this.driver.findElement(By.xpath(this.locators.getProperty("birds_on_top")));
 	}
 
 	public void clickBirdsOnTop(WebDriver driver) {
 		this.getBirdsOnTop(driver).click();
 	}
+	
+	//left Navigation Bar
 
 	public WebElement getFishLink(WebDriver driver) {
 		return this.driver.findElement(By.xpath(this.locators.getProperty("fish_link")));
@@ -159,6 +164,7 @@ public class PetStoreMenuPage {
 	public void clickBirdsLink(WebDriver driver) {
 		this.getBirdsLink(driver).click();
 	}
+	//quick Links
 
 	public WebElement getCartLink(WebDriver driver) {
 		return this.driver.findElement(By.xpath(this.locators.getProperty("cart_link")));
@@ -169,7 +175,7 @@ public class PetStoreMenuPage {
 	}
 
 	public WebElement getSingInLink(WebDriver driver) {
-		return driver.findElement(By.xpath(this.locators.getProperty("singIn")));
+		return driver.findElement(By.xpath(this.locators.getProperty("sing_in")));
 	}
 
 	public void clickSingInLink(WebDriver driver) {
@@ -185,7 +191,7 @@ public class PetStoreMenuPage {
 	}
 	public boolean isInSignInPage() {
 		try {
-			this.driver.findElement(By.xpath(locators.getProperty("logIn")));
+			this.driver.findElement(By.xpath(locators.getProperty("log_in")));
 			return true;
 		} catch (Exception e) {
 			return false;
