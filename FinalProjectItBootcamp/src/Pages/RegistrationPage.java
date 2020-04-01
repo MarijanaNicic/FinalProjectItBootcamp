@@ -22,22 +22,25 @@ public class RegistrationPage {
 		this.locators = locators;
 		this.waiter = waiter;
 	}
+	
+	// Enter ID
 
 	public static WebElement getUserID() {
-		return driver.findElement(By.xpath(locators.getProperty("userId")));
+		return driver.findElement(By.xpath(locators.getProperty("user_id")));
 	}
 
 	public static void setUserID(String userId) {
 		getUserID().clear();
 		getUserID().sendKeys(userId);
 	}
+	//Enter password
 
 	public static WebElement getNewPassword() {
-		return driver.findElement(By.xpath(locators.getProperty("newPassword")));
+		return driver.findElement(By.xpath(locators.getProperty("new_password")));
 	}
 
 	public static WebElement getRepeatPassword() {
-		return driver.findElement(By.xpath(locators.getProperty("repeatPasword")));
+		return driver.findElement(By.xpath(locators.getProperty("repeat_password")));
 	}
 
 	public static void setAllPass(String password) {
@@ -46,18 +49,22 @@ public class RegistrationPage {
 		getRepeatPassword().clear();
 		getRepeatPassword().sendKeys(password);
 	}
+	
+	//Enter first name
 
 	public static WebElement getFirstName() {
-		return driver.findElement(By.xpath(locators.getProperty("firstName")));
+		return driver.findElement(By.xpath(locators.getProperty("first_name")));
 	}
 
 	public static void setFirstName(String firstName) {
 		getFirstName().clear();
 		getFirstName().sendKeys(firstName);
 	}
+	
+	//Enter last name
 
 	public static WebElement getLastName() {
-		return driver.findElement(By.xpath(locators.getProperty("lastName")));
+		return driver.findElement(By.xpath(locators.getProperty("last_name")));
 	}
 
 	public static void setLastName(String lastName) {
@@ -138,7 +145,7 @@ public class RegistrationPage {
 	}
 
 	public static WebElement getLanguage() {
-		return driver.findElement(By.xpath(locators.getProperty("languagePereference")));
+		return driver.findElement(By.xpath(locators.getProperty("language_pereference")));
 	}
 
 	public static Select getSelectLanguage() {
@@ -150,7 +157,7 @@ public class RegistrationPage {
 	}
 
 	public static WebElement getFavoriteCategory() {
-		return driver.findElement(By.xpath(locators.getProperty("favoriteCategory")));
+		return driver.findElement(By.xpath(locators.getProperty("favorite_category")));
 	}
 
 	public static Select getSelectFavoriteCategory() {
@@ -162,19 +169,19 @@ public class RegistrationPage {
 	}
 
 	public static WebElement enableMyList() {
-		return driver.findElement(By.xpath(locators.getProperty("enableMyList")));
+		return driver.findElement(By.xpath(locators.getProperty("enable_my_list")));
 	}
 
 	public WebElement getEnableMyList() {
-		return this.driver.findElement(By.xpath(locators.getProperty("enableMyList")));
+		return this.driver.findElement(By.xpath(locators.getProperty("enable_my_list")));
 	}
 
 	public static WebElement getSaveAccauntInformation() {
-		return driver.findElement(By.xpath(locators.getProperty("saveAccauntInformation")));
+		return driver.findElement(By.xpath(locators.getProperty("save_accaunt_information")));
 	}
 
 	public static WebElement getLogoImg() {
-		return driver.findElement(By.xpath(locators.getProperty("logoImg")));
+		return driver.findElement(By.xpath(locators.getProperty("logo_img")));
 	}
 
 	public boolean checkRegistration() {
