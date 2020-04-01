@@ -47,7 +47,7 @@ public class SignInPage {
 	//Log in Button
 	
 	public WebElement getLoginButton() {
-		return this.driver.findElement(By.xpath(locators.getProperty("logIn")));
+		return this.driver.findElement(By.xpath(locators.getProperty("log_in_button")));
 	}
 	
 	public void clickLoginButton() {
@@ -56,7 +56,7 @@ public class SignInPage {
 	
 	//register
 	public WebElement getRegisterButton() {
-		return this.driver.findElement(By.xpath(locators.getProperty("registerButton")));
+		return this.driver.findElement(By.xpath(locators.getProperty("register_button")));
 	}
 	
 	public void clickRegisterButton() {
@@ -71,7 +71,7 @@ public class SignInPage {
 	}
 	
 	public WebElement getSignOut() {
-		return this.driver.findElement(By.xpath(locators.getProperty("signOut")));
+		return this.driver.findElement(By.xpath(locators.getProperty("sign_out")));
 	}
 	
 	// true or false sign in
@@ -79,7 +79,7 @@ public class SignInPage {
 	
 		public boolean signedIn() {
 			try {
-				this.driver.findElement(By.xpath(locators.getProperty("signOut")));
+				this.driver.findElement(By.xpath(locators.getProperty("sign_out")));
 				return true;
 			} catch (Exception e) {
 				return false;

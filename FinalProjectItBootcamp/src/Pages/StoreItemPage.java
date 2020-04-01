@@ -22,7 +22,7 @@ public class StoreItemPage {
 //add to cart
 
 	public WebElement getAddToCart() {
-		return this.driver.findElement(By.xpath(locators.getProperty("addToCart")));
+		return this.driver.findElement(By.xpath(locators.getProperty("add_to_cart")));
 	}
 
 	public void clickAddToCart() {

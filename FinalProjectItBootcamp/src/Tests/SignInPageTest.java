@@ -48,7 +48,7 @@ public class SignInPageTest {
 		SignInPage signIn = new SignInPage(driver, locators, waiter);
 
 		for (int i = 1; i < ExcelUtils.getRowNumber(); i++) {
-			driver.navigate().to(this.locators.getProperty("signIn_url"));
+			driver.navigate().to(this.locators.getProperty("sign_in_url"));
 			String username = ExcelUtils.getDataAt(i, 0);
 			String password = ExcelUtils.getDataAt(i, 1);
 
