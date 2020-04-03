@@ -45,12 +45,13 @@ Run test suite: TestNg.xml
 * *All packages are in the `src` folder.*
 
 ## Package Pages contains 6 classes:
- * CartPage
- * HomePage
- * PetStoreMenuPage
- * RegistrationPage
- * SignInPage
- * StoreItemPage
+ 1. CartPage
+ 2. HomePage
+ 3. PetStoreMenuPage
+ 4. RegistrationPage
+ 5. SignInPage
+ 6. StoreItemPage
+ * *All packages are in the `src` folder.*
 
 ## Package Tests contains 5 classes:
 1. CartTest
