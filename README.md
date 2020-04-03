@@ -19,8 +19,7 @@ Run test suite: TestNg.xml
 
 * TestNG automation testing framework
 * Selenium portable framework for testing web applications
-* Apache POI library for manipulating various file formats
-* JavaDoc is located in doc folder.
+* Apache POI 
 
 ## The following website functionalities are tested:
 
