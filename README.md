@@ -6,7 +6,7 @@ Target application URL is: https://petstore.octoperf.com/.
 
 > Browsers: 
 
-1. Chrome Browser version: 79.0.3945.36,
+1. Chrome Browser version: 79.0.3945.36
 
 2. Firefox Browser version: 74.0.
 
