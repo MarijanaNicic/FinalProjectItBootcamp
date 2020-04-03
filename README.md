@@ -51,7 +51,6 @@ Run test suite: TestNg.xml
  4. RegistrationPage
  5. SignInPage
  6. StoreItemPage
- * *All packages are in the `src` folder.*
 
 ## Package Tests contains 5 classes:
 1. CartTest
