@@ -4,7 +4,7 @@ Version: 1.0.0
 ### FinalProjectItBootcamp is used for testing functionalities:
 Target application URL is: https://petstore.octoperf.com/.
 
-Browsers: 
+> Browsers: 
 
 1. Chrome Browser version: 79.0.3945.36,
 
