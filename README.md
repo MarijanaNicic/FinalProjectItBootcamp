@@ -34,7 +34,7 @@ Run test suite: TestNg.xml
 * Adding all items in the Cart (Excel tabel, sheet cart_items)
 * Check are all items added to cart
 * Delete all cookies
-* Check are cart is empty
+* Check if cart is empty
 * Using soft assert
 
 ## This project contains 3 packages:
