@@ -42,7 +42,7 @@ Run test suite: TestNg.xml
 1. Pages
 2. Tests
 3. Utilis
-All packages are in the `src` folder.
+* *All packages are in the `src` folder.*
 
 ## Package Pages contains 6 classes:
  * CartPage
